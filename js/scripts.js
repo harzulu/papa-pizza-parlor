@@ -5,8 +5,9 @@ function Pizza(size) {
   this.price = 0;
 }
 
-function Topping(type) {
+function Topping(type, size) {
   this.type = type;
+  this.size = size;
   this.cost = 0;
 }
 
@@ -15,6 +16,9 @@ Topping.prototype.setCost = function () {
     this.cost = 0.75;
   } else {
     this.cost = 0.50;
+  }
+  if (this.size === "large") {
+    this.cost += 0.25;
   }
 } 
 
