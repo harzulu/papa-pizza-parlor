@@ -49,7 +49,8 @@ Pizza.prototype.addTopping = function(topping) {
 
 //UI Logic
 $(document).ready(function() {
-  $(".intro").submit(function() {
+  $(".intro").submit(function(event) {
+    event.preventDefault();
     let name = $("#name").val();
     let address = [];
     address.push($("#address").val());
@@ -59,6 +60,20 @@ $(document).ready(function() {
     let size = $("size").val();
     let user = new User(name, address);
     let pizza = new Pizza(size);
+  });
+  $(".veggies").submit(function(event) {
+    event.preventDefault();
+    let veggies = [];
+    let meats = [];
+    $("input:checkbox[name=veggie]:checked").each(function() {
+      veggies.push($(this).val());
+    });
+  });
+  $(".meats").submit(function(event) {
+    event.preventDefault();
+    $("input:checkbox[name=meat]:checked").each(function() {
+      meats.push($(this).val());
+    });
   });
 
 });
