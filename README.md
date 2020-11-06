@@ -39,6 +39,7 @@ Email me at: `benrmcfarland@gmail.com`
 |:---:| :---: | :---: |
 | User choses the size of pizza | *Large button is checked* | Pizza object property "size" = 'large' |
 | Sets price of pizza based on size of pizza | *Pizza size is large* | Pizza object property "price" = 12.99 |
+| Adds topping to pizza | *cheese* | Pizza object property "toppings" = ['cheese'] |
 
 ## Technology Used
 

@@ -15,6 +15,10 @@ Pizza.prototype.setPrice = function() {
   }
 }
 
+Pizza.prototype.addTopping = function(topping) {
+  this.toppings.push(topping);
+}
+
 
 //UI Logic
 $(document).ready(function() {
