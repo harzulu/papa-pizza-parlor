@@ -35,7 +35,10 @@ Email me at: `benrmcfarland@gmail.com`
 
 ## Specs
 
-
+|Test | Input | Output|
+|:---:| :---: | :---: |
+| User choses the size of pizza | *Large button is checked* | Pizza object property "size" = 'large' |
+| | | |
 
 ## Technology Used
 
