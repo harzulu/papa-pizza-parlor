@@ -42,6 +42,8 @@ Email me at: `benrmcfarland@gmail.com`
 | Adds topping to pizza | *cheese* | Pizza object property "toppings" = ['cheese'] |
 | Creates Topping object and sets cost if meat or veggie | *ham* | "toppings" = ['cheese', 'ham'], pizza cost = 13.74 |
 | Asks user what size topping they want  | *regular* | Topping object = ['Black Olives', 'regular'] |
+| Saves toppings info into array | *Topping object* | topping array = [Topping, Topping, Topping] |
+| Adds toppings to pizza object | *Toppings Array* | Pizza object = ['large', toppingsArr, 12.99] |
 
 ## Technology Used
 

@@ -4,6 +4,18 @@ body {
   margin-right: 25%;
 }
 
+.veggies {
+  display: none;
+}
+
+.meats {
+  display: none;
+}
+
+.topping {
+  display: none;
+}
+
 form {
   margin-bottom: 10%;
 }
