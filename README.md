@@ -1,35 +1,53 @@
-# [Project Name]
+# Papa Pizza Parlor
 
-## [Brief summary], [Current version date]
+## Build your own pizza!, 11-06-2020
 
-### [All Authors]
+### [Ben McFarland
 
-[Deatiled full description of the whole program]
+Build your own pizza with any topings, any size, and get the total price of your pizza at the end!
 
 ## Setup/Installation Requirements
 
-* [Item 1]
-* [Item 2]
-* [Item 3]
+#### Using Terminal/Command Line:
+* Open your machine's Terminal or Command line
+* Using the Terminal/Command line, navigate to the location you would like this project
+* Enter the command: `git clone https://github.com/harzulu/papa-pizza-parlor`
+* To open the project in your default browser, enter the command: `open index.html`
 
-[Intallation description]
+#### Downloading From GitHub:
+* Click the green "code" button to the top right
+* Click "Download ZIP"
+* Open the zip file in your downloads folder
+* Move the folder "papa-pizza-parlor" to your desired location
+* Double click the "index.html" file to open the project in your default browser
+
+#### To View Live Project Online:
+The live version is at this link:
+[https://harzulu.github.io/papa-pizza-parlor/]
 
 ## Known Bugs/Issues
 
-[Description of all known bugs and issues]
+There are no known bugs or issues
 
 ## Support and Contact Details
 
-[Where/who to go to if there are any questions or comments]
+Email me at: `benrmcfarland@gmail.com`
+
+## Specs
+
+
 
 ## Technology Used
 
-* [Language 1]
-* [Language 2]
-* [Software 1]
+* Microsoft Visual Studio Code
+* HTML
+* JavaScript
+* jQuery
+* CSS
+* Bootstrap
 
 ## Licenseing and Copyright
 
-[Determine the license which this application can be under (Typically MIT or GPL)]
+This project is licensed under the GPL license
 
-Copyright (c) 20-- [List of authors/company(s)]
+Copyright (c) 2020 Benjamin McFarland
