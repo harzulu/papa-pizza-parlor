@@ -48,6 +48,20 @@ Pizza.prototype.addTopping = function(topping) {
 
 
 //UI Logic
+
+function toppingsSize(toppings) {
+  let array = [];
+  toppings.forEach(topping) {
+    $(".topping").show();
+    $("#toppingName").html(topping);
+    $(".topping").submit(function() {
+      let size = $("#toppingSize").val();
+      let finalTopping = new Topping(topping, size);
+      array.push(finalTopping);
+    });
+  };
+}
+
 $(document).ready(function() {
   $(".intro").submit(function(event) {
     event.preventDefault();

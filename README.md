@@ -41,6 +41,7 @@ Email me at: `benrmcfarland@gmail.com`
 | Sets price of pizza based on size of pizza | *Pizza size is large* | Pizza object property "price" = 12.99 |
 | Adds topping to pizza | *cheese* | Pizza object property "toppings" = ['cheese'] |
 | Creates Topping object and sets cost if meat or veggie | *ham* | "toppings" = ['cheese', 'ham'], pizza cost = 13.74 |
+| Asks user what size topping they want  | *regular* | Topping object = ['Black Olives', 'regular'] |
 
 ## Technology Used
 
