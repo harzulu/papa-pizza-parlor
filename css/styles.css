@@ -16,6 +16,10 @@ body {
   display: none;
 }
 
+.result {
+  display: none;
+}
+
 form {
   margin-bottom: 10%;
 }
