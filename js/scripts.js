@@ -5,10 +5,19 @@ function Pizza(size) {
   this.price = 0;
 }
 
-function Topping(type, size) {
+function User(name, address) {
+  this.name = name;
+  this.address = address;
+}
+
+function Topping(type) {
   this.type = type;
-  this.size = size;
+  this.size;
   this.cost = 0;
+}
+
+Topping.prototype.setSize = function(size) {
+  this.size = size;
 }
 
 Topping.prototype.setCost = function () {
@@ -40,5 +49,16 @@ Pizza.prototype.addTopping = function(topping) {
 
 //UI Logic
 $(document).ready(function() {
+  $(".intro").submit(function() {
+    let name = $("#name").val();
+    let address = [];
+    address.push($("#address").val());
+    address.push($("#city").val());
+    address.push($("#state").val());
+    address.push($("#zip").val());
+    let size = $("size").val();
+    let user = new User(name, address);
+    let pizza = new Pizza(size);
+  });
 
 });
