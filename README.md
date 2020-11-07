@@ -2,7 +2,7 @@
 
 ## Build your own pizza!, 11-06-2020
 
-### [Ben McFarland
+### Ben McFarland
 
 Build your own pizza with any topings, any size, and get the total price of your pizza at the end!
 

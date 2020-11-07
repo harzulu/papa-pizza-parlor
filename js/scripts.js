@@ -84,7 +84,7 @@ function makeResults(pizza) {
   (pizza.toppings).forEach(function(topping) {
     $("#toppingsList").append("<li>" + topping.name + "</li>")
   });
-  $("#pizzaPrice").html(pizza.cost);
+  $("#pizzaCost").html(pizza.price);
   $(".result").slideDown();
 }
 
@@ -100,7 +100,6 @@ $(document).ready(function() {
     address.push($("#state").val());
     address.push($("#zip").val());
     let size = $(".size").val();
-    alert(size);
     user.addInfo(name, address);
     pizza.setSize(size);
     $(".intro").slideUp();
@@ -130,7 +129,7 @@ $(document).ready(function() {
       meats.push($(this).val());
     });
     $(".meats").slideUp();
-    //$(".topping").show();
+ //   $(".topping").show();
  //   let toppingsArr = toppingsSize(meats);
  //   toppingsArr.forEach(function(topping) {
     meatArr = makeToppings(meats, "meat");
