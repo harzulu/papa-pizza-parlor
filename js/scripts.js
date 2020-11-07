@@ -10,33 +10,31 @@ function UserInfo() {
   this.address = [];
 }
 
-function Topping(type, size) {
+function Topping(name, type) {
+  this.name = name
   this.type = type;
-  this.size = size;
+ // this.size = size;
   this.cost = 0;
 }
-
-Topping.prototype.setCost = function () {
-  if (this.type === 'meat') {
-    this.cost = 0.75;
-  } else {
-    this.cost = 0.50;
-  }
-  if (this.size === "large") {
-    this.cost += 0.25;
-  }
-} 
 
 UserInfo.prototype.addInfo = function(name, address) {
   this.name = name;
   this.address = address;
 }
 
+Topping.prototype.setCost = function () {
+  if (this.type === "meat") {
+    this.cost = 0.75;
+  } else {
+    this.cost = 0.50;
+  }
+//  if (this.size === "extra") {
+//    this.cost += 0.25;
+//  }
+} 
+
 Pizza.prototype.setSize = function(size) {
   this.size = size;
-}
-
-Pizza.prototype.setPrice = function() {
   if (this.size === "large") {
     this.price = 12.99;
   } else if (this.size === "medium") {
@@ -54,7 +52,7 @@ Pizza.prototype.addTopping = function(topping) {
 
 //UI Logic
 
-function toppingsSize(toppings) {
+/*function toppingsSize(toppings) {
   let old_html = $(".topping").html();
   let array = [];
   toppings.forEach(function(topping) {
@@ -69,7 +67,26 @@ function toppingsSize(toppings) {
   });
   $(".topping").hide();
   return array;
-};
+};*/
+
+function makeToppings(array, type) {
+  let toppingsArray = [];
+  array.forEach(function(topping) {
+    let toppingObject = new Topping(topping, type);
+    toppingObject.setCost();
+    toppingsArray.push(toppingObject);
+  });
+  return toppingsArray;
+}
+
+function makeResults(pizza) {
+  $("#pizzaSize").html(pizza.size);
+  (pizza.toppings).forEach(function(topping) {
+    $("#toppingsList").append("<li>" + topping.name + "</li>")
+  });
+  $("#pizzaPrice").html(pizza.cost);
+  $(".result").slideDown();
+}
 
 $(document).ready(function() {
   let user = new UserInfo();
@@ -82,13 +99,14 @@ $(document).ready(function() {
     address.push($("#city").val());
     address.push($("#state").val());
     address.push($("#zip").val());
-    let size = $("size").val();
+    let size = $(".size").val();
+    alert(size);
     user.addInfo(name, address);
     pizza.setSize(size);
-    pizza.setPrice();
     $(".intro").slideUp();
     $(".veggies").slideDown();
   });
+
   $(".veggies").submit(function(event) {
     event.preventDefault();
     let veggies = [];
@@ -96,13 +114,15 @@ $(document).ready(function() {
       veggies.push($(this).val());
     });
     $(".veggies").slideUp();
-    $(".topping").show();
-    let toppingsArr = toppingsSize(veggies);
-    toppingsArr.forEach(function(topping) {
+ //   let toppingsArr = toppingsSize(veggies);
+ //   toppingsArr.forEach(function(topping) {
+    veggiesArr = makeToppings(veggies, "veggie");
+    veggiesArr.forEach(function(topping) {
       pizza.addTopping(topping);
     });
     $(".meats").slideDown();
   });
+
   $(".meats").submit(function(event) {
     event.preventDefault();
     let meats = [];
@@ -110,12 +130,13 @@ $(document).ready(function() {
       meats.push($(this).val());
     });
     $(".meats").slideUp();
-    $(".topping").show();
-    let toppingsArr = toppingsSize(meats);
-    toppingsArr.forEach(function(topping) {
-      pizza.addTopping(topping);
+    //$(".topping").show();
+ //   let toppingsArr = toppingsSize(meats);
+ //   toppingsArr.forEach(function(topping) {
+    meatArr = makeToppings(meats, "meat");
+    meatArr.forEach(function(meat) {
+      pizza.addTopping(meat);
     });
-    $(".result").slideDown();
-  });
-
+    makeResults(pizza);
+    });
 });
